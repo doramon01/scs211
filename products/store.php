@@ -6,7 +6,7 @@ require_once "../config.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Prepare an insert statement
-    $sql = "INSERT INTO employees (name, address, salary) VALUES ('{$_POST["name"]}','{$_POST["address"]}', '{$_POST["salary"]}')";
+    $sql = "INSERT INTO products (title, description, price) VALUES ('{$_POST["title"]}','{$_POST["description"]}', '{$_POST["price"]}')";
     // echo $sql;
     if (mysqli_query($link, $sql)) {
         echo "Records added successfully.";

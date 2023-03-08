@@ -5,7 +5,7 @@ require_once "../config.php";
 // Processing form data when form is submitted
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     // Prepare an update statement
-    $sql = "UPDATE employees SET name='{$_POST["name"]}', address='{$_POST["address"]}', salary='{$_POST["salary"]}' WHERE id='{$_POST["id"]}'";
+    $sql = "UPDATE products SET title='{$_POST["title"]}', description='{$_POST["description"]}', price='{$_POST["price"]}' WHERE id='{$_POST["id"]}'";
     // echo $sql;
     if (mysqli_query($link, $sql)) {
         echo "Records Updated successfully.";

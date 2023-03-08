@@ -3,7 +3,7 @@
 require_once "../config.php";
 
 // Attempt select query execution
-$sql = "SELECT * FROM product";
+$sql = "SELECT * FROM products";
 $result = mysqli_query($link, $sql);
 // Fetch all data in an array
 $data  = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -17,27 +17,26 @@ $data  = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <html lang="en">
 
 <head>
-    <title>Dashboard</title>
+    <title>PRODUCT</title>
     <?php include('../layouts/employee-style.php'); ?>
 </head>
-
 <body>
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees </h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <h2 class="pull-left">PRODUCT</h2>
+                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> เพิ่มสินค้า</a>
                     </div>
-                    <table class="table table-bordered table-striped">
-                        <thead>
+                    <table class="table table-striped">
+                        <thead class="table-dark">
                             <tr>
-                                <th>#</th>
-                                <th>title</th>
-                                <th>description</th>
-                                <th>price</th>
-                                
+                                <th>ลำดับ</th>
+                                <th>สินค้า</th>
+                                <th>รายละเอียดสินค้า</th>
+                                <th>ราคา</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,7 +65,6 @@ $data  = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </div>
         </div>
     </div>
-
     <?php include('../layouts/employee-script.php'); ?>
 </body>
 

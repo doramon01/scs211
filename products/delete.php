@@ -5,7 +5,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     require_once "../config.php";
 
     // Prepare a delete statement
-    $sql = "DELETE FROM employees WHERE id = '{$_POST["id"]}'";
+    $sql = "DELETE FROM products WHERE id = '{$_POST["id"]}'";
     // echo $sql;
     if (mysqli_query($link, $sql)) {
         echo "Records Deleted successfully.";

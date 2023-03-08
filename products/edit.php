@@ -2,7 +2,7 @@
 // Include config file
 require_once "../config.php";
 // Prepare a select statement
-$sql = "SELECT * FROM employees WHERE id = '{$_GET["id"]}'";
+$sql = "SELECT * FROM products WHERE id = '{$_GET["id"]}'";
 // echo $sql;
 $result = mysqli_query($link, $sql);
 if (mysqli_num_rows($result) == 0) {
@@ -32,16 +32,16 @@ $row = mysqli_fetch_assoc($result);
                     <p>Please edit the input values and submit to update the employee record.</p>
                     <form action="update.php" method="post">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control" value="<?= $row["name"] ?>">
+                            <label>TITLE</label>
+                            <input type="text" name="title" class="form-control" value="<?= $row["title"] ?>">
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control"><?= $row["address"] ?></textarea>
+                            <label>ADESCRIPTION</label>
+                            <textarea name="description" class="form-control"><?= $row["description"] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Salary</label>
-                            <input type="text" name="salary" class="form-control" value="<?= $row["salary"] ?>">
+                            <label>PRICE</label>
+                            <input type="text" name="price" class="form-control" value="<?= $row["price"] ?>">
                         </div>
                         <input type="hidden" name="id" value="<?= $row["id"] ?>" />
                         <input type="submit" class="btn btn-primary" value="Submit">
